@@ -67,12 +67,24 @@ header {
         text-decoration: none;
         transition: 0.2s;
         text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black; }
-        header .barraGrande .navBar a:hover {
+        header .barraGrande .navBar a:hover, header .usuario:hover {
           color: #E7328A; }
       header .barraGrande .navBar .barra {
         border-bottom: 1px solid #E7328A; }
   header .menuDesplegable {
     display: none; }
+  header .usuario{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    font-size: 12px;
+    font-family: montserrat;
+    text-decoration: none;
+  }header .usuario img{
+    height: 12px;
+    width: 12px;
+  }
 
 .banner .nombreBanner {
   text-align: center;
@@ -367,7 +379,8 @@ footer {
   background-color: white;
   text-align: center;
   color: black;
-  padding-top: 1.25rem; }
+  padding-top: 1.25rem;
+  padding-bottom: 4rem; }
   .trabajos .seccionesTrabajos {
     display: flex;
     flex-direction: row;
@@ -393,7 +406,65 @@ footer {
       padding-right: 20px;
       border-right: 1px solid black; }
 
-.galeria {
+      #portfolioContainer{
+        height: auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;   
+        padding-bottom: 20px; 
+        padding: 0; 
+        gap: 0;
+      }
+      .cajasPortfolio{
+        height: auto;
+        width: 550px;
+        margin: 0px;
+        padding: 0px;
+        gap: 0;        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }.cajasPortfolio img{
+        height: auto;
+        width: 550px;
+        object-fit: cover;       
+      }
+      .cajaDetallePortfolio{
+        height: 450px;
+        width: 450px;
+        position: absolute;
+        align-self: center;
+        color: white;
+        background: rgba(29, 29, 29, 0.782);
+        margin-bottom: 10px;
+        opacity: 0;
+        transition-timing-function: ease-in-out;
+        transition: 0.5s; 
+      }
+      .cajaDetallePortfolio:hover{
+        opacity: 100;
+      }
+      .cajaDetallePortfolio h1{
+        width: 70%;
+        margin: auto;
+        margin-top: 40%;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-family: milker;
+      }.cajaDetallePortfolio p{
+        margin: 0;
+        padding: 0;
+        font-family: montserrat;
+        font-size: 20px;
+        text-transform: capitalize;
+      }
+
+/* .galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0;
   width: 90%;
   margin: auto; }
@@ -410,7 +481,7 @@ footer {
     .galeria img:hover {
       filter: saturate(1.5);
       transform: scale(0.95);
-      object-fit: contain; }
+      object-fit: contain; } */
 
 .servicios {
   background-image: url(../assets/img/fondoNegro.webp);
@@ -779,6 +850,46 @@ footer {
     margin: auto; }
   .ofrecemos .queremos p {
     font-size: 4.5vw; }
+
+.loginSection{
+  height: auto;
+  width: 100%;
+  margin-top: 150px;
+  padding-bottom: 150px;
+  padding-top: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;  
+  font-family: montserrat;
+}.loginSection label{
+  margin-top: 20px;
+}.loginSection input{
+  width: 350px;
+  color: grey;
+  padding: 5px;
+}.loginSection span{
+  color: red;
+}.loginSection button{
+  background-color: #66C5E1;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  margin-top: 20px;
+  font-family: milker;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}.loginSection button a{
+  text-decoration: none;
+  color: white;
+}.loginSection button:hover{
+  background-color: #E7328A;
+  transition-timing-function: ease-out;
+      transition: 0.5s;
+}.iniciarSesionSeccion h3, .registarseSeccion h3{
+  font-size: 50px;
+  font-family: milker;
+  padding-bottom: 20px;
+}
 
 @media only screen and (max-width: 1400px) {
   /* INDEX */
