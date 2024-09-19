@@ -6,11 +6,14 @@ let trabajos = [
     {trabajo: "Zombie 3D", tipo: "3D", año: 2023, img: "../assets/img/portfolio/cinco.png" },
     {trabajo: "Edición videoclip", tipo: "motion",año: 2023, img: "../assets/img/portfolio/seis.png" },
     {trabajo: "Tarjetería Marca", tipo: "branding", año: 2022, img: "../assets/img/portfolio/siete.png" },
-    {trabajo: "Fotografía N° Channel", tipo: "fotografia", año: 2022, img: "../assets/img/portfolio/oho.png" },
+    {trabajo: "Fotografía Channel", tipo: "fotografia", año: 2022, img: "../assets/img/portfolio/oho.png" },
     {trabajo: "Modelado 3D Minion", tipo: "3D", año: 2024, img: "../assets/img/portfolio/nueve.png" },
     {trabajo: "Patrones Diseño ", tipo: "branding", año: 2023, img: "../assets/img/portfolio/diez.png" },
     {trabajo: "Grabación película", tipo: "audiovisual", año: 2023, img: "../assets/img/portfolio/once.png" },
-    {trabajo: "Folletería", tipo: "branding", año: 2023, img: "../assets/img/portfolio/doce.png" }
+    {trabajo: "Folletería", tipo: "branding", año: 2023, img: "../assets/img/portfolio/doce.png" },
+    {trabajo: "Cartoon", tipo: "motion", año: 2022, img: "../assets/img/portfolio/animateCartoon.webp" },
+    {trabajo: "Infografía Greenpeace", tipo: "motion", año: 2022, img: "../assets/img/portfolio/motionGCuatro.webp" },
+    {trabajo: "Psy Trance", tipo: "audiovisual", año: 2022, img: "../assets/img/portfolio/audisvisualDos.webp" }
     ];
 
     let tresD = trabajos.filter(e => e.tipo === "3D");
@@ -19,35 +22,6 @@ let trabajos = [
     let fotografia = trabajos.filter(e => e.tipo === "fotografia");
     let audiovisual = trabajos.filter(e => e.tipo === "audiovisual");
     let branding = trabajos.filter(e => e.tipo === "branding");
-
- /*   
- //Sin refactorizar
-    const todoClick = document.getElementById("todo");
-    todoClick.onclick = () => {
-      renderTrabajos(trabajos)
-    }
-    const tresDClick = document.getElementById("3D");
-    tresDClick.onclick = () => {
-      renderTrabajos(tresD)
-    }
-    const audiovisualClick = document.getElementById("audiovisual");
-    audiovisualClick.onclick = () => {
-      renderTrabajos(audiovisual)
-    }
-    const brandingClick = document.getElementById("branding");
-    brandingClick.onclick = () => {
-      renderTrabajos(branding)
-    }
-    const motionClick = document.getElementById("motion");
-    motionClick.onclick = () => {
-      renderTrabajos(motionGraphic)
-    }
-    const fotografiaClick = document.getElementById("fotografia");
-    fotografiaClick.onclick = () => {
-      renderTrabajos(fotografia)
-    } 
-      */
-
 
     //refactorizado
     const categories = {
@@ -67,9 +41,6 @@ let trabajos = [
         renderTrabajos(categories[buttonId]);
       };
     });
-
-renderTrabajos(trabajos)
-
 
 function renderTrabajos(trabajos){
     let container = document.getElementById('portfolioContainer');
@@ -91,12 +62,40 @@ function renderTrabajos(trabajos){
                //Contatene en la variable content.
     });
     container.innerHTML = content;
-  //  document.body.appendChild(etiquetaSection);
 }
 
+//Constructor de nuevo Objeto de Trabajos
+class nuevoTrabajo{
+  constructor(trabajo, tipo, año, img){
+    this.trabajo = trabajo;
+    this.tipo = tipo;
+    this.año = año;
+    this.img = img;
+  }
+}
+function showNewWork(nuevo){  
+  trabajos.push(nuevo);  
 
+  if (categories[nuevo.tipo]) {
+    categories[nuevo.tipo].unshift(nuevo);
+  }
+}
 
+const newWork = new nuevoTrabajo("Foto Camara Sonic", "fotografia", 2024, "../assets/img/portfolio/photoCamera.webp");
+const newWork2 = new nuevoTrabajo("Animacion Infografia", "motion", 2024, "../assets/img/portfolio/motionG1.webp");
+const newWork3 = new nuevoTrabajo("Anteojos RayBan", "3D", 2023, "../assets/img/portfolio/photoGlass.webp");
+const newWork4 = new nuevoTrabajo("Crema Facial", "3D", 2023, "../assets/img/portfolio/productCrema.webp");
+const newWork5 = new nuevoTrabajo("Museo de los Artistas", "branding", 2023, "../assets/img/portfolio/folleteriaCards.webp");
+const newWork6 = new nuevoTrabajo("Folleteria Franquicias", "branding", 2023, "../assets/img/portfolio/printOffset.webp");
 
+showNewWork(newWork);
+showNewWork(newWork2);
+showNewWork(newWork3);
+showNewWork(newWork4);
+showNewWork(newWork5);
+showNewWork(newWork6);
+
+renderTrabajos(trabajos);
 
 
 

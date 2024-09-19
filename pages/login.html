@@ -15,7 +15,7 @@
     <title>Usuario</title>
     <link rel="shortcut icon" href="../assets/ico/logo-ico.ico">
 </head>
-<body>
+<body data-pagina="login">
 
     <header id="header">
 
@@ -92,17 +92,16 @@
             <h5>Usuarios Registrados</h5>
             <p>Si tiene una cuenta, inicie sesión con su dirección de correo electrónico.</p>
 
-            <form name="iniciarSesion" action="login">
+            <form name="iniciarSesion" action="">
                <div class="formEstilo">
                     <label for="email">Correo electrónico <span>*</span></label><br>
                     <input type="email" id="email" name="email">
                </div>
-               <div class="formEstilo">
+               <div class="formEstilo" id="cajaLogin">
                 <label for="password">Contraseña <span>*</span></label><br>
                 <input type="password" id="password" name="password">
                </div>
-               <input type="submit" value="Iniciar sesión">
-               <!-- <button type="submit">Iniciar Sesión</button> -->
+               <button id="botonInicioSesion">Iniciar Sesión</button>
             </form>
           </div>
 
@@ -204,7 +203,9 @@
       </div>
     
 
+     
       <script src="../js/main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 

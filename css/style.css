@@ -411,7 +411,7 @@ footer {
         width: 90%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: left;
         margin: auto;   
         padding-bottom: 20px; 
         padding: 0; 
@@ -432,19 +432,22 @@ footer {
         object-fit: cover;       
       }
       .cajaDetallePortfolio{
-        height: 450px;
-        width: 450px;
+        height: 500px;
+        width: 500px;
         position: absolute;
         align-self: center;
         color: white;
-        background: rgba(29, 29, 29, 0.782);
+        background: rgba(29, 29, 29, 0.864);
         margin-bottom: 10px;
+        border-radius: 5px;
         opacity: 0;
-        transition-timing-function: ease-in-out;
+        transition-timing-function: ease-out;
         transition: 0.5s; 
       }
       .cajaDetallePortfolio:hover{
         opacity: 100;
+        transform: scale(0.90);
+        border-radius: 15px;
       }
       .cajaDetallePortfolio h1{
         width: 70%;
@@ -460,28 +463,6 @@ footer {
         font-size: 20px;
         text-transform: capitalize;
       }
-
-/* .galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-  width: 90%;
-  margin: auto; }
-  .galeria div {
-    margin: 0px;
-    padding: 0px;
-    gap: 0; }
-  .galeria img {
-    height: auto;
-    width: 550px;
-    object-fit: cover;
-    transition-timing-function: ease-in-out;
-    transition: 0.5s; }
-    .galeria img:hover {
-      filter: saturate(1.5);
-      transform: scale(0.95);
-      object-fit: contain; } */
 
 .servicios {
   background-image: url(../assets/img/fondoNegro.webp);
@@ -855,10 +836,10 @@ footer {
   height: auto;
   width: 100%;
   margin-top: 150px;
-  padding-bottom: 150px;
-  padding-top: 100px;
+  padding: 100px 0px 150px 50px;
   background-color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;  
   font-family: montserrat;
 }.loginSection label{
@@ -884,11 +865,16 @@ footer {
 }.loginSection button:hover{
   background-color: #E7328A;
   transition-timing-function: ease-out;
-      transition: 0.5s;
+  transition: 0.5s;
 }.iniciarSesionSeccion h3, .registarseSeccion h3{
   font-size: 50px;
   font-family: milker;
   padding-bottom: 20px;
+}.iniciarSesionSeccion{
+  width: 600px;
+}.registarseSeccion{
+  width: 600px;
+ padding-top: 50px;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -1117,7 +1103,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    padding: 5px 0px 5px 0px; }
+    padding: 5px 0px 5px 0px;}
   .brandingServicio h2 {
     font-size: 6.5vw; }
     .brandingServicio h2 span {
@@ -1134,7 +1120,8 @@ footer {
     font-size: 35px;
     padding: 0rem 0rem 0rem 0rem; }
     .listaDetalle ul li {
-      margin-top: 15px; }
+      margin-top: 15px;  
+      cursor:pointer;}
   .videosAnimados::after {
     height: 250px;
     width: 250px; }
