@@ -86,6 +86,7 @@ header {
     width: 12px;
   }
 
+
 .banner .nombreBanner {
   text-align: center;
   background-image: url(../assets/img/noiserGris.webp);
@@ -411,7 +412,7 @@ footer {
         width: 90%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         margin: auto;   
         padding-bottom: 20px; 
         padding: 0; 

@@ -1,6 +1,5 @@
 const paginaActual = document.body.dataset.pagina || '';
 
-
 // Función para mostrar advertencias
 function showWarning(container, warningId, message) {
     let warning = document.getElementById(warningId);
@@ -11,7 +10,6 @@ function showWarning(container, warningId, message) {
         container.appendChild(warning);
     }
 }
-
 // Función para eliminar advertencias
 function removeWarning(container, warningId) {
     let warning = document.getElementById(warningId);
@@ -20,11 +18,8 @@ function removeWarning(container, warningId) {
     }
 }
 
-
-
 function configurarRegistro() {
 
- 
 document.getElementById('crearCuenta').addEventListener('click', (event) => {
     event.preventDefault();
     let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];  
@@ -126,11 +121,11 @@ document.getElementById('crearCuenta').addEventListener('click', (event) => {
 });
 };
 
-// Lógica para iniciar sesión
+
 function configurarInicioSesion() {
 
     let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];    
-document.getElementById('botonInicioSesion').addEventListener('click', (event) => {   
+    document.getElementById('botonInicioSesion').addEventListener('click', (event) => {   
     event.preventDefault();
 
     const emailLogin = document.getElementById('email').value;
@@ -138,12 +133,12 @@ document.getElementById('botonInicioSesion').addEventListener('click', (event) =
     let loginContainer = document.getElementById('cajaLogin');
     let loginWarning = document.getElementById('loginWarning');
 
-    // Eliminar el mensaje anterior si existe
+
     if (loginWarning) {
         loginContainer.removeChild(loginWarning);
     }
 
-    // Verificar si los campos de login están vacíos
+
     if (!emailLogin || !passwordLogin) {
         showWarning(loginContainer, 'loginWarning', 'Correo electrónico o contraseña incorrectos');
         return;
@@ -156,12 +151,12 @@ document.getElementById('botonInicioSesion').addEventListener('click', (event) =
     if (!usuarioEncontrado || usuarioEncontrado.password !== hashedPasswordLogin) {
         showWarning(loginContainer, 'loginWarning', 'Correo electrónico o contraseña incorrectos');
     } else {
-        navegar(); // Función que lleva a otra página
+        navegar(); 
     }
 });
 };
 
-// Función para redireccionar
+
 function navegar(){  
     location.href = "../index.html";
 };
