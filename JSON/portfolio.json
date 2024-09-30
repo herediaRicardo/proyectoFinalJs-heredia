@@ -1,0 +1,92 @@
+[
+   {
+       "trabajo": "Zapatos 3D",
+       "tipo": "3D",
+       "año": 2022,
+       "img": "../assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "trabajo": "Mochila alpine",
+       "tipo": "fotografia",
+       "año": 2022,
+       "img": "../assets/img/portfolio/dos.png"
+   },
+   {
+       "trabajo": "Personaje 3D",
+       "tipo": "3D",
+       "año": 2023,
+       "img": "../assets/img/portfolio/tres.png"
+   },
+   {
+       "trabajo": "Videoclip Ke Personaje",
+       "tipo": "audiovisual",
+       "año": 2024,
+       "img": "../assets/img/portfolio/cuatro.png"
+   },
+   {
+       "trabajo": "Zombie 3D",
+       "tipo": "3D",
+       "año": 2023,
+       "img": "../assets/img/portfolio/cinco.png"
+   },
+   {
+       "trabajo": "Edición videoclip",
+       "tipo": "motion",
+       "año": 2023,
+       "img": "../assets/img/portfolio/seis.png"
+   },
+   {
+       "trabajo": "Tarjetería Marca",
+       "tipo": "branding",
+       "año": 2022,
+       "img": "../assets/img/portfolio/siete.png"
+   },
+   {
+       "trabajo": "Fotografía Channel",
+       "tipo": "fotografia",
+       "año": 2022,
+       "img": "../assets/img/portfolio/oho.png"
+   },
+   {
+       "trabajo": "Modelado 3D Minion",
+       "tipo": "3D",
+       "año": 2024,
+       "img": "../assets/img/portfolio/nueve.png"
+   },
+   {
+       "trabajo": "Patrones Diseño ",
+       "tipo": "branding",
+       "año": 2023,
+       "img": "../assets/img/portfolio/diez.png"
+   },
+   {
+       "trabajo": "Grabación película",
+       "tipo": "audiovisual",
+       "año": 2023,
+       "img": "../assets/img/portfolio/once.png"
+   },
+   {
+       "trabajo": "Folletería",
+       "tipo": "branding",
+       "año": 2023,
+       "img": "../assets/img/portfolio/doce.png"
+   },
+   {
+       "trabajo": "Cartoon",
+       "tipo": "motion",
+       "año": 2022,
+       "img": "../assets/img/portfolio/animateCartoon.webp"
+   },
+   {
+       "trabajo": "Infografía Greenpeace",
+       "tipo": "motion",
+       "año": 2022,
+       "img": "../assets/img/portfolio/motionGCuatro.webp"
+   },
+   {
+       "trabajo": "Psy Trance",
+       "tipo": "audiovisual",
+       "año": 2022,
+       "img": "../assets/img/portfolio/audisvisualDos.webp"
+   }
+]
