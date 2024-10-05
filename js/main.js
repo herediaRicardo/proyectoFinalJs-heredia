@@ -22,21 +22,31 @@ function configurarRegistro() {
 
 document.getElementById('crearCuenta').addEventListener('click', (event) => {
     event.preventDefault();
-    let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];  
-//Valores de los inputs del form registro
-    const userName = document.getElementById('nameRegister').value;
-    const userLastname = document.getElementById('lastNameRegister').value;
-    const userMail = document.getElementById('emailRegister').value;
-    const userPassword = document.getElementById('passwordRegister').value;
-    const userPasswordConfirm = document.getElementById('passwordRegisterConfirm').value;
+    let usuariosGuardados;
+    try {
+        usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
+    } catch (error) {
+        console.error("Error al parsear usuarios de localStorage", error);
+        usuariosGuardados = [];
+    }
+    //Valores de los inputs del form registro con desestructuracion
+    const { value: userName } = document.getElementById('nameRegister');
+    const { value: userLastname } = document.getElementById('lastNameRegister');
+    const { value: userMail } = document.getElementById('emailRegister');
+    const { value: userPassword } = document.getElementById('passwordRegister');
+    const { value: userPasswordConfirm } = document.getElementById('passwordRegisterConfirm');
 
-//Contenedores de donde van las advertencias
+//Contenedores de donde van las advertencias con desestructuracion
     let formIsValid = true;
-    let containerName = document.getElementById("cajaRegisterName");
-    let containerLastName = document.getElementById("cajaRegisterLastName");
-    let containerMail = document.getElementById("cajaRegisterMail");
-    let containerPassword = document.getElementById("cajaRegisterPassword");
-    let containerPasswordConfirm = document.getElementById("cajaRegisterPasswordConfirm");
+    const containerElements = {
+        containerName: document.getElementById("cajaRegisterName"),
+        containerLastName: document.getElementById("cajaRegisterLastName"),
+        containerMail: document.getElementById("cajaRegisterMail"),
+        containerPassword: document.getElementById("cajaRegisterPassword"),
+        containerPasswordConfirm: document.getElementById("cajaRegisterPasswordConfirm")
+    };
+
+    const { containerName, containerLastName, containerMail, containerPassword, containerPasswordConfirm } = containerElements;
 
 //Funcion para mostrar errores
     const showWarning = (container, warningId, mensaje) => {
@@ -66,24 +76,14 @@ document.getElementById('crearCuenta').addEventListener('click', (event) => {
     ? (showWarning(containerLastName, 'lastNameWarning', 'Ingrese un apellido correcto'), formIsValid = false) 
     : removeWarning(containerLastName, 'lastNameWarning');
 
-!userMail 
+    //Chequeo si ya existe el usuario
+
+    const usuarioExistente = usuariosGuardados.find(usuario => usuario.email === userMail);
+    !userMail 
     ? (showWarning(containerMail, 'mailWarning', 'Ingrese un mail correcto'), formIsValid = false)
     : usuarioExistente 
         ? (showWarning(containerMail, 'mailWarning', 'Este correo ya está registrado'), formIsValid = false) 
         : removeWarning(containerMail, 'mailWarning');
-
-        //Chequeo si ya existe el usuario
-    const usuarioExistente = usuariosGuardados.find(usuario => usuario.email === userMail);
-    if (!userMail) {
-        showWarning(containerMail, 'mailWarning', 'Ingrese un mail correcto');
-        formIsValid = false;
-    } else if (usuarioExistente) {
-        showWarning(containerMail, 'mailWarning', 'Este correo ya está registrado');
-        formIsValid = false;
-    } else {
-        removeWarning(containerMail, 'mailWarning');
-    }
-
 
     !userPassword 
     ? (showWarning(containerPassword, 'passwordWarning', 'Ingrese una contraseña correcta'), formIsValid = false) 
