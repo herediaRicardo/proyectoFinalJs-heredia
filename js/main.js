@@ -58,22 +58,21 @@ document.getElementById('crearCuenta').addEventListener('click', (event) => {
     };
 
 //Validaciones
-    if (!userName) {
-        showWarning(containerName, 'nameWarning', 'Ingrese un nombre correcto');
-        formIsValid = false;
-    } else {
-        removeWarning(containerName, 'nameWarning');
-    }
+!userName 
+    ? (showWarning(containerName, 'nameWarning', 'Ingrese un nombre correcto'), formIsValid = false) 
+    : removeWarning(containerName, 'nameWarning');
 
+!userLastname 
+    ? (showWarning(containerLastName, 'lastNameWarning', 'Ingrese un apellido correcto'), formIsValid = false) 
+    : removeWarning(containerLastName, 'lastNameWarning');
 
-    if (!userLastname) {
-        showWarning(containerLastName, 'lastNameWarning', 'Ingrese un apellido correcto');
-        formIsValid = false;
-    } else {
-        removeWarning(containerLastName, 'lastNameWarning');
-    }
+!userMail 
+    ? (showWarning(containerMail, 'mailWarning', 'Ingrese un mail correcto'), formIsValid = false)
+    : usuarioExistente 
+        ? (showWarning(containerMail, 'mailWarning', 'Este correo ya está registrado'), formIsValid = false) 
+        : removeWarning(containerMail, 'mailWarning');
 
-
+        //Chequeo si ya existe el usuario
     const usuarioExistente = usuariosGuardados.find(usuario => usuario.email === userMail);
     if (!userMail) {
         showWarning(containerMail, 'mailWarning', 'Ingrese un mail correcto');
@@ -86,22 +85,16 @@ document.getElementById('crearCuenta').addEventListener('click', (event) => {
     }
 
 
-    if (!userPassword) {
-        showWarning(containerPassword, 'passwordWarning', 'Ingrese una contraseña correcta');
-        formIsValid = false;
-    } else {
-        removeWarning(containerPassword, 'passwordWarning');
-    }
+    !userPassword 
+    ? (showWarning(containerPassword, 'passwordWarning', 'Ingrese una contraseña correcta'), formIsValid = false) 
+    : removeWarning(containerPassword, 'passwordWarning');
+
+    userPassword !== userPasswordConfirm 
+    ? (showWarning(containerPasswordConfirm, 'passwordWarningConfirm', 'La contraseña es diferente'), formIsValid = false)
+    : removeWarning(containerPasswordConfirm, 'passwordWarningConfirm');
 
 
-    if (userPassword !== userPasswordConfirm) {
-        showWarning(containerPasswordConfirm, 'passwordWarningConfirm', 'La contraseña es diferente');
-        formIsValid = false;
-    } else {
-        removeWarning(containerPasswordConfirm, 'passwordWarningConfirm');
-    }
-
-//Si formIsValid es true
+//Si formIsValid es true...
     if (formIsValid) {
         const hashedPassword = CryptoJS.SHA256(userPassword).toString();
         
@@ -159,13 +152,10 @@ function configurarInicioSesion() {
 
 function navegar(){  
     location.href = "../index.html";
+    //crear logica para popup de bienvenida
 };
 
 // Ejecutar funciones según la página actual
 document.addEventListener('DOMContentLoaded', () => {
-    if (paginaActual === 'login') {
-        configurarInicioSesion();
-    } else if (paginaActual === 'registro') {
-        configurarRegistro();
-    }
-});
+    paginaActual === 'login' ? configurarInicioSesion() : configurarRegistro();
+})

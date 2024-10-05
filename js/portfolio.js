@@ -1,29 +1,17 @@
-let trabajos = [
-    {trabajo: "Zapatos 3D", tipo: "3D", año: 2022, img: "../assets/img/portfolio/unoi.jpg" },
-    {trabajo: "Mochila alpine", tipo: "fotografia", año: 2022, img: "../assets/img/portfolio/dos.png" },
-    {trabajo: "Personaje 3D", tipo: "3D", año: 2023, img: "../assets/img/portfolio/tres.png" },
-    {trabajo: "Videoclip Ke Personaje", tipo: "audiovisual", año: 2024, img: "../assets/img/portfolio/cuatro.png" },
-    {trabajo: "Zombie 3D", tipo: "3D", año: 2023, img: "../assets/img/portfolio/cinco.png" },
-    {trabajo: "Edición videoclip", tipo: "motion",año: 2023, img: "../assets/img/portfolio/seis.png" },
-    {trabajo: "Tarjetería Marca", tipo: "branding", año: 2022, img: "../assets/img/portfolio/siete.png" },
-    {trabajo: "Fotografía Channel", tipo: "fotografia", año: 2022, img: "../assets/img/portfolio/oho.png" },
-    {trabajo: "Modelado 3D Minion", tipo: "3D", año: 2024, img: "../assets/img/portfolio/nueve.png" },
-    {trabajo: "Patrones Diseño ", tipo: "branding", año: 2023, img: "../assets/img/portfolio/diez.png" },
-    {trabajo: "Grabación película", tipo: "audiovisual", año: 2023, img: "../assets/img/portfolio/once.png" },
-    {trabajo: "Folletería", tipo: "branding", año: 2023, img: "../assets/img/portfolio/doce.png" },
-    {trabajo: "Cartoon", tipo: "motion", año: 2022, img: "../assets/img/portfolio/animateCartoon.webp" },
-    {trabajo: "Infografía Greenpeace", tipo: "motion", año: 2022, img: "../assets/img/portfolio/motionGCuatro.webp" },
-    {trabajo: "Psy Trance", tipo: "audiovisual", año: 2022, img: "../assets/img/portfolio/audisvisualDos.webp" }
-    ];
 
+// Función para cargar los trabajos desde un archivo JSON
+async function loadTrabajos() {
+  try {
+    const response = await fetch('../JSON/portfolio.json'); // Ruta al archivo JSON
+    const trabajos = await response.json();
+    
+    // Filtrar los trabajos por tipo
     let tresD = trabajos.filter(e => e.tipo === "3D");
     let motionGraphic = trabajos.filter(e => e.tipo === "motion");
-    let web = trabajos.filter(e => e.tipo === "web");
     let fotografia = trabajos.filter(e => e.tipo === "fotografia");
     let audiovisual = trabajos.filter(e => e.tipo === "audiovisual");
     let branding = trabajos.filter(e => e.tipo === "branding");
 
-    //refactorizado
     const categories = {
       todo: trabajos,
       "3D": tresD,
@@ -32,9 +20,12 @@ let trabajos = [
       motion: motionGraphic,
       fotografia: fotografia
     };
-    
+
+    // Renderizar los trabajos
+    renderTrabajos(trabajos);
+
+    // Asignar eventos a los botones
     const buttons = Object.keys(categories);
-    
     buttons.forEach(buttonId => {
       const element = document.getElementById(buttonId);
       element.onclick = () => {
@@ -42,29 +33,41 @@ let trabajos = [
       };
     });
 
-function renderTrabajos(trabajos){
-    let container = document.getElementById('portfolioContainer');
-    let content = '';
-    //let etiquetaSection = document.createElement('section');
-    trabajos.map(elemento => {
-        let etiquetaDiv = document.createElement('div');
-        content += `
-               <div class="cajasPortfolio">
-               <img alt="" title="" src=${elemento.img}>
-               <div class="cajaDetallePortfolio">
-               <h1>${elemento.trabajo}</h1>               
-               <p><b>${elemento.tipo}</b></p>
-               <p>${elemento.año}</p>
-               </div>
-               </div>
-               `;
-    document.body.appendChild(etiquetaDiv);
-               //Contatene en la variable content.
-    });
-    container.innerHTML = content;
+  } catch (error) {
+    console.error('Error al cargar el archivo JSON:', error);
+  }
 }
 
-//Constructor de nuevo Objeto de Trabajos
+// Función para renderizar los trabajos en el HTML
+function renderTrabajos(trabajos) {
+  let container = document.getElementById('portfolioContainer');
+  let content = '';
+  trabajos.forEach(elemento => {
+    content += `
+      <div class="cajasPortfolio">
+        <img alt="" title="" src=${elemento.img}>
+        <div class="cajaDetallePortfolio">
+          <h1>${elemento.trabajo}</h1>               
+          <p><b>${elemento.tipo}</b></p>
+          <p>${elemento.año}</p>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = content;
+}
+
+
+
+// Cargar los trabajos al iniciar
+loadTrabajos();
+
+
+
+/* 
+HAY QUE LOGRAR HACERLO FUNCIONAR
+//También tengo un Constructor de nuevo Objeto de Trabajos, pero al no poder agregarlo por no tener servidor, no lo puedo hacer :(
+
 class nuevoTrabajo{
   constructor(trabajo, tipo, año, img){
     this.trabajo = trabajo;
@@ -73,11 +76,19 @@ class nuevoTrabajo{
     this.img = img;
   }
 }
-function showNewWork(nuevo){  
-  trabajos.push(nuevo);  
-
-  if (categories[nuevo.tipo]) {
-    categories[nuevo.tipo].unshift(nuevo);
+async function addNewWorkToJson(nuevo){  
+  try {
+    const response = await fetch('http://localhost:3000/portfolio.html', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(nuevoTrabajo)
+    });
+    const result = await response.json();
+    console.log(result.message); // Mensaje del servidor
+  } catch (error) {
+    console.error('Error al agregar el trabajo:', error);
   }
 }
 
@@ -88,16 +99,10 @@ const newWork4 = new nuevoTrabajo("Crema Facial", "3D", 2023, "../assets/img/por
 const newWork5 = new nuevoTrabajo("Museo de los Artistas", "branding", 2023, "../assets/img/portfolio/folleteriaCards.webp");
 const newWork6 = new nuevoTrabajo("Folleteria Franquicias", "branding", 2023, "../assets/img/portfolio/printOffset.webp");
 
-showNewWork(newWork);
-showNewWork(newWork2);
-showNewWork(newWork3);
-showNewWork(newWork4);
-showNewWork(newWork5);
-showNewWork(newWork6);
-
-renderTrabajos(trabajos);
-
-
-
-
-
+addNewWorkToJson(newWork);
+addNewWorkToJson(newWork2);
+addNewWorkToJson(newWork3);
+addNewWorkToJson(newWork4);
+addNewWorkToJson(newWork5);
+addNewWorkToJson(newWork6);
+*/
