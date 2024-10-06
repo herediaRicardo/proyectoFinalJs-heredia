@@ -1,25 +1,22 @@
-
 // Función para cargar los trabajos desde un archivo JSON
 async function loadTrabajos() {
   try {
     const response = await fetch('../JSON/portfolio.json'); // Ruta al archivo JSON
+    // Programación defensiva: verifica si la respuesta es exitosa
+    if (!response.ok) {
+      throw new Error('Error al obtener los trabajos');
+    }
     const trabajos = await response.json();
-    
-    // Filtrar los trabajos por tipo
-    let tresD = trabajos.filter(e => e.tipo === "3D");
-    let motionGraphic = trabajos.filter(e => e.tipo === "motion");
-    let fotografia = trabajos.filter(e => e.tipo === "fotografia");
-    let audiovisual = trabajos.filter(e => e.tipo === "audiovisual");
-    let branding = trabajos.filter(e => e.tipo === "branding");
 
-    const categories = {
-      todo: trabajos,
-      "3D": tresD,
-      audiovisual: audiovisual,
-      branding: branding,
-      motion: motionGraphic,
-      fotografia: fotografia
-    };
+        // Filtrar los trabajos por tipo
+        const categories = {
+          todo: trabajos,
+          "3D": trabajos.filter(e => e.tipo === "3D"),
+          audiovisual: trabajos.filter(e => e.tipo === "audiovisual"),
+          branding: trabajos.filter(e => e.tipo === "branding"),
+          motion: trabajos.filter(e => e.tipo === "motion"),
+          fotografia: trabajos.filter(e => e.tipo === "fotografia")
+        };
 
     // Renderizar los trabajos
     renderTrabajos(trabajos);
@@ -42,21 +39,36 @@ async function loadTrabajos() {
 function renderTrabajos(trabajos) {
   let container = document.getElementById('portfolioContainer');
   let content = '';
-  trabajos.forEach(elemento => {
-    content += `
-      <div class="cajasPortfolio">
-        <img alt="" title="" src=${elemento.img}>
-        <div class="cajaDetallePortfolio">
-          <h1>${elemento.trabajo}</h1>               
-          <p><b>${elemento.tipo}</b></p>
-          <p>${elemento.año}</p>
-        </div>
-      </div>
-    `;
-  });
-  container.innerHTML = content;
-}
 
+    // Programación defensiva: verifica si el contenedor existe
+    if (!container) {
+      console.error('Contenedor de trabajos no encontrado');
+      return;
+    }
+    
+    trabajos.forEach(elemento => {
+      // Desestructuración con valores por defecto (programación defensiva)
+      const {
+        img = '../assets/img/default.jpg',
+        trabajo = 'Trabajo no disponible',
+        tipo = 'Tipo no especificado',
+        año = 'Año no disponible'
+      } = elemento;
+  
+      // Crear el contenido HTML asegurando que los valores están definidos
+      content += `
+        <div class="cajasPortfolio">
+          <img alt="Imagen de ${trabajo}" title="${trabajo}" src="${img}">
+          <div class="cajaDetallePortfolio">
+            <h1>${trabajo}</h1>               
+            <p><b>${tipo}</b></p>
+            <p>${año}</p>
+          </div>
+        </div>
+      `;
+    });
+    container.innerHTML = content;
+  }
 
 
 // Cargar los trabajos al iniciar
