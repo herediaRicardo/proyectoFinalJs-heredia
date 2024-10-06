@@ -1,32 +1,32 @@
 // Función para cargar los trabajos desde un archivo JSON
-async function loadTrabajos() {
+async function loadWorks() {
   try {
     const response = await fetch('../JSON/portfolio.json'); // Ruta al archivo JSON
     // Programación defensiva: verifica si la respuesta es exitosa
     if (!response.ok) {
       throw new Error('Error al obtener los trabajos');
     }
-    const trabajos = await response.json();
+    const works = await response.json();
 
         // Filtrar los trabajos por tipo
         const categories = {
-          todo: trabajos,
-          "3D": trabajos.filter(e => e.tipo === "3D"),
-          audiovisual: trabajos.filter(e => e.tipo === "audiovisual"),
-          branding: trabajos.filter(e => e.tipo === "branding"),
-          motion: trabajos.filter(e => e.tipo === "motion"),
-          fotografia: trabajos.filter(e => e.tipo === "fotografia")
+          todo: works,
+          "3D": works.filter(e => e.tipo === "3D"),
+          audiovisual: works.filter(e => e.tipo === "audiovisual"),
+          branding: works.filter(e => e.tipo === "branding"),
+          motion: works.filter(e => e.tipo === "motion"),
+          fotografia: works.filter(e => e.tipo === "fotografia")
         };
 
     // Renderizar los trabajos
-    renderTrabajos(trabajos);
+    renderWorks(works);
 
     // Asignar eventos a los botones
     const buttons = Object.keys(categories);
     buttons.forEach(buttonId => {
       const element = document.getElementById(buttonId);
       element.onclick = () => {
-        renderTrabajos(categories[buttonId]);
+        renderWorks(categories[buttonId]);
       };
     });
 
@@ -36,7 +36,7 @@ async function loadTrabajos() {
 }
 
 // Función para renderizar los trabajos en el HTML
-function renderTrabajos(trabajos) {
+function renderWorks(works) {
   let container = document.getElementById('portfolioContainer');
   let content = '';
 
@@ -46,23 +46,23 @@ function renderTrabajos(trabajos) {
       return;
     }
     
-    trabajos.forEach(elemento => {
+    works.forEach(elemento => {
       // Desestructuración con valores por defecto (programación defensiva)
       const {
-        img = '../assets/img/default.jpg',
-        trabajo = 'Trabajo no disponible',
-        tipo = 'Tipo no especificado',
-        año = 'Año no disponible'
+        img = '../assets/img/default.webp',
+        item = 'Trabajo no disponible',
+        type = 'Tipo no especificado',
+        year = 'Año no disponible'
       } = elemento;
   
       // Crear el contenido HTML asegurando que los valores están definidos
       content += `
         <div class="cajasPortfolio">
-          <img alt="Imagen de ${trabajo}" title="${trabajo}" src="${img}">
+          <img alt="Imagen de ${item}" title="${item}" src="${img}">
           <div class="cajaDetallePortfolio">
-            <h1>${trabajo}</h1>               
-            <p><b>${tipo}</b></p>
-            <p>${año}</p>
+            <h1>${item}</h1>               
+            <p><b>${type}</b></p>
+            <p>${year}</p>
           </div>
         </div>
       `;
@@ -72,13 +72,13 @@ function renderTrabajos(trabajos) {
 
 
 // Cargar los trabajos al iniciar
-loadTrabajos();
+loadWorks();
 
 
 
 /* 
+//También tengo un Constructor de nuevo Objeto de Trabajos, pero al no poder agregarlo por no tener servidor, no puedo lograr agregar estas mismas.
 HAY QUE LOGRAR HACERLO FUNCIONAR
-//También tengo un Constructor de nuevo Objeto de Trabajos, pero al no poder agregarlo por no tener servidor, no lo puedo hacer :(
 
 class nuevoTrabajo{
   constructor(trabajo, tipo, año, img){

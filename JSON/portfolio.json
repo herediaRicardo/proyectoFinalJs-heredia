@@ -1,92 +1,92 @@
 [
    {
-       "trabajo": "Zapatos 3D",
-       "tipo": "3D",
-       "año": 2022,
-       "img": "../assets/img/portfolio/unoi.jpg"
+       "item": "Zapatos 3D",
+       "type": "3D",
+       "year": 2022,
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
-       "trabajo": "Mochila alpine",
-       "tipo": "fotografia",
-       "año": 2022,
-       "img": "../assets/img/portfolio/dos.png"
+       "item": "Mochila alpine",
+       "type": "fotografia",
+       "year": 2022,
+       "img": "./assets/img/portfolio/dos.png"
    },
    {
-       "trabajo": "Personaje 3D",
-       "tipo": "3D",
-       "año": 2023,
-       "img": "../assets/img/portfolio/tres.png"
+       "item": "Personaje 3D",
+       "type": "3D",
+       "year": 2023,
+       "img": "./assets/img/portfolio/tres.png"
    },
    {
-       "trabajo": "Videoclip Ke Personaje",
-       "tipo": "audiovisual",
-       "año": 2024,
-       "img": "../assets/img/portfolio/cuatro.png"
+       "item": "Videoclip Ke Personaje",
+       "type": "audiovisual",
+       "year": 2024,
+       "img": "./assets/img/portfolio/cuatro.png"
    },
    {
-       "trabajo": "Zombie 3D",
-       "tipo": "3D",
-       "año": 2023,
-       "img": "../assets/img/portfolio/cinco.png"
+       "item": "Zombie 3D",
+       "type": "3D",
+       "year": 2023,
+       "img": "./assets/img/portfolio/cinco.png"
    },
    {
-       "trabajo": "Edición videoclip",
-       "tipo": "motion",
-       "año": 2023,
-       "img": "../assets/img/portfolio/seis.png"
+       "item": "Edición videoclip",
+       "type": "motion",
+       "year": 2023,
+       "img": "./assets/img/portfolio/seis.png"
    },
    {
-       "trabajo": "Tarjetería Marca",
-       "tipo": "branding",
-       "año": 2022,
-       "img": "../assets/img/portfolio/siete.png"
+       "item": "Tarjetería Marca",
+       "type": "branding",
+       "year": 2022,
+       "img": "./assets/img/portfolio/siete.png"
    },
    {
-       "trabajo": "Fotografía Channel",
-       "tipo": "fotografia",
-       "año": 2022,
-       "img": "../assets/img/portfolio/oho.png"
+       "item": "Fotografía Channel",
+       "type": "fotografia",
+       "year": 2022,
+       "img": "./assets/img/portfolio/oho.png"
    },
    {
-       "trabajo": "Modelado 3D Minion",
-       "tipo": "3D",
-       "año": 2024,
-       "img": "../assets/img/portfolio/nueve.png"
+       "item": "Modelado 3D Minion",
+       "type": "3D",
+       "year": 2024,
+       "img": "./assets/img/portfolio/nueve.png"
    },
    {
-       "trabajo": "Patrones Diseño ",
-       "tipo": "branding",
-       "año": 2023,
-       "img": "../assets/img/portfolio/diez.png"
+       "item": "Patrones Diseño ",
+       "type": "branding",
+       "year": 2023,
+       "img": "./assets/img/portfolio/diez.png"
    },
    {
-       "trabajo": "Grabación película",
-       "tipo": "audiovisual",
-       "año": 2023,
-       "img": "../assets/img/portfolio/once.png"
+       "item": "Grabación película",
+       "type": "audiovisual",
+       "year": 2023,
+       "img": "./assets/img/portfolio/once.png"
    },
    {
-       "trabajo": "Folletería",
-       "tipo": "branding",
-       "año": 2023,
-       "img": "../assets/img/portfolio/doce.png"
+       "item": "Folletería",
+       "type": "branding",
+       "year": 2023,
+       "img": "./assets/img/portfolio/doce.png"
    },
    {
-       "trabajo": "Cartoon",
-       "tipo": "motion",
-       "año": 2022,
-       "img": "../assets/img/portfolio/animateCartoon.webp"
+       "item": "Cartoon",
+       "type": "motion",
+       "year": 2022,
+       "img": "./assets/img/portfolio/animateCartoon.webp"
    },
    {
-       "trabajo": "Infografía Greenpeace",
-       "tipo": "motion",
-       "año": 2022,
-       "img": "../assets/img/portfolio/motionGCuatro.webp"
+       "item": "Infografía Greenpeace",
+       "type": "motion",
+       "year": 2022,
+       "img": "./assets/img/portfolio/motionGCuatro.webp"
    },
    {
-       "trabajo": "Psy Trance",
-       "tipo": "audiovisual",
-       "año": 2022,
-       "img": "../assets/img/portfolio/audisvisualDos.webp"
+       "item": "Psy Trance",
+       "type": "audiovisual",
+       "year": 2022,
+       "img": "./assets/img/portfolio/audisvisualDos.webp"
    }
 ]

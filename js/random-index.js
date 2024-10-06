@@ -1,16 +1,16 @@
-  async function loadTrabajos() {
+  async function loadWorks() {
     try {
       const response = await fetch('./JSON/portfolio.json'); // Ruta al archivo JSON
       // Programación defensiva: verifica si la respuesta es exitosa
       if (!response.ok) {
         throw new Error('Error al obtener los trabajos');
       }
-      const trabajos = await response.json();
+      const works = await response.json();
   
       // Mostrar trabajos aleatorios en el index.html
-      const randomWorks = getRandomTrabajos(trabajos, 4);
+      const randomWorks = getRandomWorks(works, 4);
 
-      renderTrabajos(randomWorks, 'portfolioContainer'); // Renderiza en el contenedor del index.html
+      renderWorks(randomWorks, 'portfolioContainerIndex'); // Renderiza en el contenedor del index.html
   
     } catch (error) {
       console.error('Error al cargar el archivo JSON:', error);
@@ -18,7 +18,7 @@
   }
   
   // Función para renderizar los trabajos en el HTML
-  function renderTrabajos(trabajos, containerId = 'portfolioContainer') {
+  function renderWorks(works, containerId = 'portfolioContainerIndex') {
     let container = document.getElementById(containerId);
     let content = '';
   
@@ -28,35 +28,37 @@
       return;
     }
 
-    trabajos.forEach(elemento => {
+    works.forEach(elemento => {
       // Desestructuración con valores por defecto (programación defensiva)
       const {
         img = './assets/img/default.jpg',
-        trabajo = 'Trabajo no disponible',
-        tipo = 'Tipo no especificado',
-        año = 'Año no disponible'
+        item = 'Trabajo no disponible',
+        type = 'Tipo no especificado',
+        year = 'Año no disponible'
       } = elemento;
   
       // Crear el contenido HTML asegurando que los valores están definidos
       content += `
+        <a href="./pages/portfolio.html" target="blank">
         <div class="cajasPortfolio">
-          <img alt="Imagen de ${trabajo}" title="${trabajo}" src="${img}">
+        <img alt="Imagen de ${item}" title="${item}" src="${img}">
           <div class="cajaDetallePortfolio">
-            <h1>${trabajo}</h1>               
-            <p><b>${tipo}</b></p>
-            <p>${año}</p>
+            <h1>${item}</h1></a>               
+            <p><b>${type}</b></p>
+            <p>${year}</p>
           </div>
         </div>
+        </a>
       `;
     });
     container.innerHTML = content;
   }
   
   // Función para obtener trabajos al azar
-  function getRandomTrabajos(trabajos, count) {
-    const shuffled = trabajos.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+  function getRandomWorks(works, count) {
+    const itemMix = works.sort(() => 0.5 - Math.random());
+    return itemMix.slice(0, count);
   }
   
   // Cargar los trabajos al iniciar
-  loadTrabajos();
+  loadWorks();
