@@ -58,7 +58,7 @@ function renderWorks(works) {
       // Crear el contenido HTML asegurando que los valores están definidos
       content += `
         <div class="cajasPortfolio">
-          <img alt="Imagen de ${item}" title="${item}" src="${img}">
+          <img alt="Imagen de ${item}" title="${item}" src=".${img}">
           <div class="cajaDetallePortfolio">
             <h1>${item}</h1>               
             <p><b>${type}</b></p>
