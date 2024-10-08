@@ -3,90 +3,90 @@
        "item": "Zapatos 3D",
        "type": "3D",
        "year": 2022,
-       "img": "../assets/img/portfolio/unoi.jpg"
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
        "item": "Mochila alpine",
        "type": "fotografia",
        "year": 2022,
-       "img": "../assets/img/portfolio/dos.png"
+       "img": "./assets/img/portfolio/dos.png"
    },
    {
        "item": "Personaje 3D",
        "type": "3D",
        "year": 2023,
-       "img": "../assets/img/portfolio/tres.png"
+       "img": "./assets/img/portfolio/tres.png"
    },
    {
        "item": "Videoclip Ke Personaje",
        "type": "audiovisual",
        "year": 2024,
-       "img": "../assets/img/portfolio/cuatro.png"
+       "img": "./assets/img/portfolio/cuatro.png"
    },
    {
        "item": "Zombie 3D",
        "type": "3D",
        "year": 2023,
-       "img": "../assets/img/portfolio/cinco.png"
+       "img": "./assets/img/portfolio/cinco.png"
    },
    {
        "item": "Edición videoclip",
        "type": "motion",
        "year": 2023,
-       "img": "../assets/img/portfolio/seis.png"
+       "img": "./assets/img/portfolio/seis.png"
    },
    {
        "item": "Tarjetería Marca",
        "type": "branding",
        "year": 2022,
-       "img": "../assets/img/portfolio/siete.png"
+       "img": "./assets/img/portfolio/siete.png"
    },
    {
        "item": "Fotografía Channel",
        "type": "fotografia",
        "year": 2022,
-       "img": "../assets/img/portfolio/oho.png"
+       "img": "./assets/img/portfolio/oho.png"
    },
    {
        "item": "Modelado 3D Minion",
        "type": "3D",
        "year": 2024,
-       "img": "../assets/img/portfolio/nueve.png"
+       "img": "./assets/img/portfolio/nueve.png"
    },
    {
        "item": "Patrones Diseño ",
        "type": "branding",
        "year": 2023,
-       "img": "../assets/img/portfolio/diez.png"
+       "img": "./assets/img/portfolio/diez.png"
    },
    {
        "item": "Grabación película",
        "type": "audiovisual",
        "year": 2023,
-       "img": "../assets/img/portfolio/once.png"
+       "img": "./assets/img/portfolio/once.png"
    },
    {
        "item": "Folletería",
        "type": "branding",
        "year": 2023,
-       "img": "../assets/img/portfolio/doce.png"
+       "img": "./assets/img/portfolio/doce.png"
    },
    {
        "item": "Cartoon",
        "type": "motion",
        "year": 2022,
-       "img": "../assets/img/portfolio/animateCartoon.webp"
+       "img": "./assets/img/portfolio/animateCartoon.webp"
    },
    {
        "item": "Infografía Greenpeace",
        "type": "motion",
        "year": 2022,
-       "img": "../assets/img/portfolio/motionGCuatro.webp"
+       "img": "./assets/img/portfolio/motionGCuatro.webp"
    },
    {
        "item": "Psy Trance",
        "type": "audiovisual",
        "year": 2022,
-       "img": "../assets/img/portfolio/audisvisualDos.webp"
+       "img": "./assets/img/portfolio/audisvisualDos.webp"
    }
 ]

@@ -11,11 +11,11 @@ async function loadWorks() {
         // Filtrar los trabajos por tipo
         const categories = {
           todo: works,
-          "3D": works.filter(e => e.tipo === "3D"),
-          audiovisual: works.filter(e => e.tipo === "audiovisual"),
-          branding: works.filter(e => e.tipo === "branding"),
-          motion: works.filter(e => e.tipo === "motion"),
-          fotografia: works.filter(e => e.tipo === "fotografia")
+          "3D": works.filter(e => e.type === "3D"),
+          audiovisual: works.filter(e => e.type === "audiovisual"),
+          branding: works.filter(e => e.type === "branding"),
+          motion: works.filter(e => e.type === "motion"),
+          fotografia: works.filter(e => e.type === "fotografia")
         };
 
     // Renderizar los trabajos
@@ -49,7 +49,7 @@ function renderWorks(works) {
     works.forEach(elemento => {
       // Desestructuración con valores por defecto (programación defensiva)
       const {
-        img = '../assets/img/default.webp',
+        img = './assets/img/default.webp',
         item = 'Trabajo no disponible',
         type = 'Tipo no especificado',
         year = 'Año no disponible'

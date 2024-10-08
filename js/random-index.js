@@ -1,6 +1,6 @@
   async function loadWorks() {
     try {
-      const response = await fetch('./JSON/portfolio.json'); // Ruta al archivo JSON
+      const response = await fetch('./JSON/portfolio-random.json'); // Ruta al archivo JSON
       // Programación defensiva: verifica si la respuesta es exitosa
       if (!response.ok) {
         throw new Error('Error al obtener los trabajos');

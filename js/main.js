@@ -1,4 +1,8 @@
 const currentPage = document.body.dataset.pagina || '';
+import Swal from 'sweetalert2'
+
+
+Swal.fire("SweetAlert2 is working!");
 
 // Función para mostrar advertencias
 function showWarning(container, warningId, message) {
