@@ -17,66 +17,44 @@
 </head>
 <body data-pagina="login">
 
-    <header id="header">
-
-       
-        <a href="../index.html" class="logoUno"><img src="../assets/img/N.png" alt="Agencia Noiser Logo"></a>
-        
+    <header id="ancla-header">
+        <a href="../index.html" class="logoUno">
+            <img src="../assets/img/N.png" alt="Agencia Noiser Logo">
+        </a>
+    
         <nav class="barraGrande">
             <ul class="navBar">
-                <li><a href="../index.html">INICIO</a></li>
+                <li class="barra"><a href="../index.html">INICIO</a></li>
                 <li><a href="./portfolio.html">PORTFOLIO</a></li>
                 <li><a href="./servicios.html">SERVICIOS</a></li>
                 <li><a href="./nosotros.html">NOSOTROS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
-        
-        <a class="usuario" href="./login.html">
+    
+        <a class="usuario" href="./login.html" id="usuarioNav">
             <img src="../assets/ico/usuario.webp" alt="usuario">
-            <span>Ingresá o registrate </span>
+            <span>CUENTA</span>
         </a>
-
-   <div class="menuDesplegable">
-
-    <a href="../index.html" class="logo"><img src="../assets/img/N.png" alt="Agencia Noiser Logo"></a>
-    <h2>CONTACTO</h2>
-    <a href="#" class="buscar"><img src="../assets/img/search.png" alt="Buscar" ></a>        
-
-
-   
-        <nav class="navbar navbar-expand-lg">
-            
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="../assets/img/burgerMenu.png" width="40" height="40" alt="Menu Desplegable">
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav sm-12 me-auto mb-12 mb-lg-12 navDesplegable">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./portfolio.html">PORTFOLIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./servicios.html">SERVICIOS</a>
-              </li>                  
-              <li class="nav-item">
-                <a class="nav-link" href="./nosotros.html">NOSOTROS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contacto.html">CONTACTO</a>
-              </li>
+    
+        <!-- Icono de menú hamburguesa -->
+        <div class="menuHamburguesa" id="menuHamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <!-- Menú desplegable para móvil -->
+        <nav class="menuMovil" id="menuMovil">
+            <ul>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+                <li><a href="./nosotros.html">NOSOTROS</a></li>
+                <li><a href="./portfolio.html">PORTFOLIO</a></li>
+                <li><a href="./servicios.html">SERVICIOS</a></li>
+                <li><a href="./login.html" class="barra">CUENTA</a></li>
             </ul>
-          </div>                    
         </nav>
-
-
-   </div>
-                 
-
     </header>
 
         <!-- MAIN -->
@@ -199,11 +177,11 @@
     </footer>
 
     <div class="botonSubir">
-        <a href="#header"><img src="../assets/img/botonSubir.webp" alt="subir"></a> 
+        <a href="#ancla-header"><img src="../assets/img/botonSubir.webp" alt="subir"></a> 
       </div>
     
-
-     
+      <script src="../js/nav-menu.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="../js/main.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

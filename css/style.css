@@ -17,6 +17,132 @@ html {
   font-family: montserrat;
   src: url(../assets/fonts/Montserrat-Regular.otf); }
 
+/* HEADER NAV JS */
+
+header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  padding: 60px 30px 0px 30px; 
+}  header .logoUno {
+  height: 50px;
+  width: auto; }
+
+.barraGrande ul {
+  display: flex;
+  list-style: none;
+  padding-top: 20px;
+}
+
+.barraGrande li {
+  margin: 0 15px;
+}
+
+.barraGrande a {
+  color: white;
+  text-decoration: none;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.usuario img {
+  height: 30px;
+  margin-right: 10px;
+}
+header .barraGrande .navBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 60px;
+  list-style: none; }
+  header .barraGrande .navBar a {
+    font-size: 16px;
+    color: white;
+    font-family: montserrat;
+    text-decoration: none;
+    transition: 0.2s;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black; }
+    header .barraGrande .navBar a:hover, header .usuario:hover {
+      color: #E7328A; }
+  header .barraGrande .navBar .barra, header .menuMovil .barra  {
+    border-bottom: 1px solid #E7328A;
+  }.menuHamburguesa {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }.menuHamburguesa span {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }.menuMovil {
+      display: none;
+      position: absolute;
+      height: 90vh;
+      top: 120px;
+      padding-top: 20px;
+      right: 0;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 100%);
+      width: 50%;
+      text-align: right;
+      font-family: "montserrat";
+    }.menuMovil ul {
+  list-style: none;
+  padding: 0;
+}.menuMovil li {
+  padding: 15px;
+}.menuMovil a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+/* Cambios para la X */
+.menuHamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(0px, 15px);
+}
+
+.menuHamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuHamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(0px, -15px);
+}
+
+header .usuario{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  font-size: 12px;
+  font-family: montserrat;
+  text-decoration: none;
+}header .usuario img{
+  height: 12px;
+  width: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+}
+
+
+
+/*  //////////////// */
+
 .botonSubir {
   display: block;
   position: fixed;
@@ -34,6 +160,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover; }
 
+  /*
 header {
   height: auto;
   width: 100%;
@@ -51,7 +178,7 @@ header {
     display: block; }
   header .barraGrande {
     padding-top: 20px;
-    /* Estilos para el menú hamburguesa */ }
+    /* Estilos para el menú hamburguesa }
     header .barraGrande .navBar {
       display: flex;
       flex-direction: row;
@@ -73,19 +200,8 @@ header {
         border-bottom: 1px solid #E7328A; }
   header .menuDesplegable {
     display: none; }
-  header .usuario{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: white;
-    font-size: 12px;
-    font-family: montserrat;
-    text-decoration: none;
-  }header .usuario img{
-    height: 12px;
-    width: 12px;
-  }
 
+*/
 
 .banner .nombreBanner {
   text-align: center;
@@ -494,6 +610,8 @@ footer {
         height: auto;
         width: 100%;
         object-fit: cover;       
+        transition-timing-function: ease-out;
+        transition: 0.1s;
       }
       #portfolioContainerIndex .cajaDetallePortfolio{
         height: 300px;
@@ -677,7 +795,7 @@ footer {
     bottom: 0;
     left: 0;
     margin: 0px 0px 60px 60px;
-    background-image: url(../assets/img/misce-flecha.png);
+    background-image: url(../assets/img/misce-flecha.webp);
     opacity: 0.5;
     height: 250px;
     width: 100px;
@@ -689,7 +807,7 @@ footer {
     top: 0;
     right: 0;
     margin: 60px 60px 0px 0px;
-    background-image: url(../assets/img/misce-flecha.png);
+    background-image: url(../assets/img/misce-flecha.webp);
     opacity: 0.5;
     height: 250px;
     width: 100px;
@@ -941,12 +1059,81 @@ footer {
  padding-top: 50px;
 }
 
+.fondoMerch{
+  height: 400px;
+  text-align: center;
+  align-items: center;
+  background-image: url(../assets/img/servicios/fondoServicios.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: milker;  
+}
+.merch h2{
+  padding-top: 200px;
+  font-size: 90px;
+}
+
+.merchSection{
+  height: auto;
+  width: 100%;
+  background-color: rgb(224, 221, 221);
+  color: black;
+  padding: 40px 0px 80px 0px;
+}
+.productBoxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+  text-align: left;
+}
+.product{
+  height: auto;
+  width: 220px;
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+}
+.product img{
+  height: 200px;
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+}.descriptionBox span{
+  font-family: "montserrat";
+  padding-left: 10px;
+}.precioMerch{
+  font-size: 35px;
+  font-family: "milker";
+}.formProduct input{
+  background-color: rgb(16, 163, 255);
+  border: 0px solid white;
+  padding: 10px;
+  font-family: "montserrat";
+  color: white;
+  border-radius: 5px;
+  margin: 15px 0px 0px 10px;
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+}.formProduct input:hover{
+  background-color: #E7328A;
+}
+
 @media only screen and (max-width: 1400px) {
-  /* INDEX */
+   /* INDEX  */
   header {
     padding-top: 60px; }
-    header .navBar {
-      gap: 40px; }
+    header .barraGrande .navBar {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+      list-style: none; }
   .banner .nombreBanner img {
     margin-top: 40vh; }
   .banner .detalleBanner {
@@ -1044,7 +1231,7 @@ footer {
     margin: 60px 0px 0px 0px; } }
 
 @media only screen and (max-width: 976px) {
-  header {
+/*  header {
     padding: 20px 5px 0px 10px;
     align-items: center; }
     header .barraGrande, header .logoUno, header .buscarUno {
@@ -1083,7 +1270,28 @@ footer {
         background-color: white;
         padding: 10px 20px 10px 160px;
         text-align: right;
-        border-radius: 5px; }
+        border-radius: 5px; }*/
+        header {
+          justify-content: space-between;
+          z-index: 1;
+      }
+        .barraGrande {
+            display: none;
+        } .menuHamburguesa {
+            display: flex;
+        }.logoUno {
+          margin-left: 0;
+          display: block;
+      } #usuarioNav {
+            display: none;
+        }.menuMovil{
+          width: 100%;
+        } .menuMovil.activo {
+            display: block;
+        }
+        body{
+          background-color: red;
+        }
   .banner {
     height: 100vh;
     width: 100%;
@@ -1270,9 +1478,12 @@ footer {
     color: white; } }
 
 @media only screen and (max-width: 400px) {
-  header h2 {
+ /* header h2 {
     text-align: left;
-    padding-left: 20px; }
+    padding-left: 20px; }*/
+    .menuMovil{
+      width: 100%;
+    }
   .banner .nombreBanner {
     height: 400px; }
     .banner .nombreBanner img {
@@ -1358,4 +1569,6 @@ footer {
   .queremos p {
     font-size: 10vw; }
   .formSection .comienza h3 {
-    font-size: 10vw; } }
+    font-size: 10vw; }
+  };
+

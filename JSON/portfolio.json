@@ -84,6 +84,42 @@
        "img": "./assets/img/portfolio/motionGCuatro.webp"
    },
    {
+       "item": "Foto Camara Sonic",
+       "type": "fotografia",
+       "year": 2024,
+       "img": "./assets/img/portfolio/photoCamera.webp"
+   },
+   {
+       "item": "Animacion Infografia",
+       "type": "motion",
+       "year": 2022,
+       "img": "./assets/img/portfolio/motionG1.webp"
+   },
+   {
+       "item": "Anteojos RayBan",
+       "type": "3D",
+       "year": 2023,
+       "img": "./assets/img/portfolio/photoGlass.webp"
+   },
+   {
+       "item": "Crema Facial",
+       "type": "3D",
+       "year": 2023,
+       "img": "./assets/img/portfolio/productCrema.webp"
+   },
+   {
+       "item": "Museo de los Artistas",
+       "type": "branding",
+       "year": 2023,
+       "img": "./assets/img/portfolio/folleteriaCards.webp"
+   },
+   {
+       "item": "Folleteria Franquicias",
+       "type": "branding",
+       "year": 2023,
+       "img": "./assets/img/portfolio/printOffset.webp"
+   },
+   {
        "item": "Psy Trance",
        "type": "audiovisual",
        "year": 2022,

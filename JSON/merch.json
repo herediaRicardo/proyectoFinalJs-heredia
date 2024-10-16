@@ -1,0 +1,66 @@
+[
+   {
+       "id": 1,
+       "item": "Gorras",
+       "price": 4350,
+       "img": "./assets/img/portfolio/unoi.jpg",
+       "variant": ["negro", "blanco"]
+   },
+   {
+       "id": 2,
+       "item": "Bolso de mano",
+       "price": 7000,
+       "img": "./assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "id": 3,
+       "item": "Libreta con lapicera",
+       "price": 2000,
+       "img": "./assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "id": 4,
+       "item": "Vasos de café",
+       "price": 780,
+       "img": "./assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "id": 5,
+       "item": "Bolsa de madera",
+       "price": 500,
+       "img": "./assets/img/portfolio/unoi.jpg",
+       "variant": ["negro", "blanco", "marron"]
+   },
+   {
+       "id": 6,
+       "item": "Vaso termico",
+       "price": 12000,
+       "img": "./assets/img/portfolio/unoi.jpg",
+       "variant": ["negro", "blanco"]
+   },
+   {
+       "id": 7,
+       "item": "Mochila",
+       "price": 17000,
+       "img": "./assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "id": 8,
+       "item": "Bolígrafos",
+       "price": 900,
+       "img": "./assets/img/portfolio/unoi.jpg",
+       "variant": ["negro", "azul"]
+   },
+   {
+       "id": 9,
+       "item": "Pendrives",
+       "price": 9050,
+       "img": "./assets/img/portfolio/unoi.jpg"
+   },
+   {
+       "id": 10,
+       "item": "Mate",
+       "price": 15000,
+       "img": "./assets/img/portfolio/audisvisualDos.webp"
+   }
+]

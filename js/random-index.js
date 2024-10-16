@@ -1,21 +1,32 @@
   async function loadWorks() {
     try {
-      const response = await fetch('./JSON/portfolio-random.json'); // Ruta al archivo JSON
+      const response = await fetch('./JSON/portfolio.json'); // Ruta al archivo JSON
       // Programación defensiva: verifica si la respuesta es exitosa
       if (!response.ok) {
         throw new Error('Error al obtener los trabajos');
       }
       const works = await response.json();
   
-      // Mostrar trabajos aleatorios en el index.html
-      const randomWorks = getRandomWorks(works, 4);
-
-      renderWorks(randomWorks, 'portfolioContainerIndex'); // Renderiza en el contenedor del index.html
+    // Mostrar 4 trabajos aleatorios cada 5 segundos en el index.html
+    rotateRandomWorks(works, 4);
   
     } catch (error) {
       console.error('Error al cargar el archivo JSON:', error);
     }
   }
+
+  // Función para mostrar 4 trabajos aleatorios cada 5 segundos
+ function rotateRandomWorks(works, count) {
+   // Renderiza los primeros 4 trabajos al inicio
+   let randomWorks = getRandomWorks(works, count);
+   renderWorks(randomWorks, 'portfolioContainerIndex');
+
+   // Usa setInterval para cambiar los 4 trabajos cada 5 segundos
+   setInterval(() => {
+     randomWorks = getRandomWorks(works, count); // Selecciona 4 trabajos aleatorios
+     renderWorks(randomWorks, 'portfolioContainerIndex'); // Vuelve a renderizar los trabajos
+   }, 10000); // 5000 milisegundos = 5 segundos
+} 
   
   // Función para renderizar los trabajos en el HTML
   function renderWorks(works, containerId = 'portfolioContainerIndex') {

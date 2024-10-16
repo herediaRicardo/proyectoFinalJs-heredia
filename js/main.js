@@ -1,5 +1,6 @@
 const currentPage = document.body.dataset.pagina || '';
-
+const usuarioEncontrado = [];
+let savedUsers = [];
 
 // Función para mostrar advertencias
 function showWarning(container, warningId, message) {
@@ -23,7 +24,7 @@ function removeWarning(container, warningId) {
 function configureRegister() {
     document.getElementById('crearCuenta').addEventListener('click', (event) => {
         event.preventDefault();
-        let savedUsers;
+     //   let savedUsers;
         try {
             savedUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
         } catch (error) {
@@ -127,15 +128,29 @@ function configureLogin() {
         if (!usuarioEncontrado || usuarioEncontrado.password !== hashedPasswordLogin) {
             showWarning(loginContainer, 'loginWarning', 'Correo electrónico o contraseña incorrectos');
         } else {
-            goToIndex(); 
+
+         //   alert(`Bienvenido ${usuarioEncontrado.nombre}`);
+         Swal.fire({
+            title: `"Bienvenido ${usuarioEncontrado.nombre}"`,
+            showDenyButton: true,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                goToIndex();    
+            }
+          });
+            
         }
     });
 }
 
-function goToIndex() {  
+function goToIndex() { 
+//Acá tengo que conseguir la manera de tomar el nombre guardado en local storage.
     location.href = "../index.html";
     // Crear lógica para popup de bienvenida
 }
+
+
 
 // Ejecutar funciones según la página actual
 document.addEventListener('DOMContentLoaded', () => {
