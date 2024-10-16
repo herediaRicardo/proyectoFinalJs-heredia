@@ -1114,7 +1114,7 @@ footer {
 }.precioMerch{
   font-size: 35px;
   font-family: "milker";
-}.formProduct input{
+}.addToCartBtn{
   background-color: rgb(16, 163, 255);
   border: 0px solid white;
   padding: 10px;
@@ -1124,7 +1124,7 @@ footer {
   margin: 15px 0px 10px 10px;
   transition: 0.2s;
   transition-timing-function: ease-out;
-}.formProduct input:hover{
+}.addToCartBtn:hover{
   background-color: #E7328A;
 }
 
@@ -1162,6 +1162,18 @@ footer {
   height: 20px;
   width: 20px;
 }
+#items-cant{
+  background-color: red;
+  color: white;  
+  font-family: "montserrat";
+  font-size: 15px;
+  text-align: center;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  margin: 5px 0px 0px 10px;
+  padding: 2px 9px 2px 9px;
+}
 #added-products{
   margin-top: 60px;
 }
@@ -1173,6 +1185,9 @@ footer {
   justify-content: space-around;
   align-items: center;
   margin: 5px 0px 5px 0px;
+}
+.item-cart{
+  width: 100px;
 }
 .img-item-cart img{
   height: 120px;
@@ -1223,16 +1238,115 @@ footer {
 }#vaciarCarrito:hover{
   background-color: rgb(251, 106, 106);
 }
-#comprar{
+#continuar{
   background-color: #0f9800;
   color: white;
   border: 0px;
-}#comprar:hover{
+}#continuar:hover{
   background-color: #abff66;
 }
 .cart-none{
   display: none;
 }
+#total-price-container{
+  font-family: "milker";
+  font-size: 35px;
+  text-align: center;
+  margin: 50px 0px 10px 0px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */  
+  font-family: "montserrat";
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 90%;
+}
+.modal-content h1{
+  text-align: center;
+  font-family: "milker";
+  padding-top: 10px;
+  font-size: 50px;
+}
+.modal-flex{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  padding-top: 30px;
+}
+.modal-flex h3{
+ font-size: 80px;
+ font-weight: bold;
+}
+.tu-pedido-class{
+  width: 500px;
+}
+#detalle-pedido, #total-pedido{
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#total-pedido span{
+  font-weight: bolder;
+}
+
+.datos-label{
+  font-size: 20px;
+  margin: 20px 0px 5px 0px;
+  font-family: "montserrat";
+  font-weight: bolder;
+}
+#mail, #direccion, #ciudad{
+  width: 300px;
+  padding: 5px 5px 5px 5px;
+}
+#comprar-final{
+  font-size: 30px;
+  padding: 10px 40px 10px 40px;
+  margin: 120px 0px 0px 0px;
+  color: white;
+  background-color: #0f9800;
+  border: 0px;
+  border-radius: 10px;
+}#comprar-final:hover{
+  background-color: #085500;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 @media only screen and (max-width: 1400px) {
    /* INDEX  */

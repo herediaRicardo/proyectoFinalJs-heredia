@@ -83,37 +83,74 @@
 
               <div class="nav-modal">
                 <a href="#"><img src="../assets/img/salir.png" alt="salir"></a>
-                <h>Carrito de Compras</h>
+                <span>Carrito de Compras</span>
                 <div>
                     <img src="../assets/img/carrito.webp" alt="carrito">
                     <div id="items-cant"></div>
                 </div>
               </div>
 
-              <div id="added-products">
-                   <!-- CAJA DE ITEMS SELECCIONADOS
-                     <div id="added-item-box">
-                       <div class="img-item-cart">
-                        <img src="../assets/img/portfolio/tres.png" alt="product">
-                       </div>
-                       <div class="item-cart">
-                           <p>Vasos de Café</p>
-                           <span>$848.90</span>
-                       </div>
-                       <div class="item-cant">
-                        <input type="button" id="btnRestar" value="-">
-                        <span id="cantidad-items">1</span>
-                        <input type="button" id="btnSumar" value="+">
-                       </div>                          
-                   </div>-->
+              <div id="added-products"></div>
+
+              <div id="total-price-container">
+                <span>Total: $<span id="total-price">0</span></span>
               </div>
+
               <div class="footer-modal">
                     <button id="vaciarCarrito">Vaciar carrito</button>
-                    <button id="comprar">Comprar</button>
+                    <button id="continuar">Continuar</button>
               </div>
         </div>
 
     </section>
+
+
+      <!-- Modal content -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>PEDIDO</h1>
+    <div class="modal-flex">
+    <div class="modal-confirmacion-compra">
+        <form action="purchaseForm">
+            <label for="mail" class="datos-label">CONTACTO</label><br>
+            <input type="email" id="mail" value="" placeholder="Correo electrónico*"><br>
+
+            <label for="direccion" class="datos-label">DIRECCION</label><br>
+            <input type="text" id="direccion" value="" placeholder="Direccion*"><br>
+
+            <label for="ciudad" class="datos-label">CIUDAD</label><br>
+            <input type="text" id="ciudad" value="" placeholder="Ciudad, Provincia*"><br>
+
+            <label for="tipo-entrega" class="datos-label">OPCIONES DE ENTREGA</label><br>
+            <input type="radio" id="retiro" name="tipo-entrega" value="retiro">
+            <label for="retiro">Retiro</label><br>
+            <input type="radio" id="entrega" name="tipo-entrega" value="entrega">
+            <label for="entrega">Entrega</label><br>
+
+            <label for="pago" class="datos-label">PAGO</label><br>
+            <input type="radio" id="efectivo" name="select-efectivo" value="efectivo">
+            <label for="efectivo">Efectivo</label>
+        </form>
+    </div>
+    <div class="tu-pedido-class">
+        <h3>Tu pedido</h3>
+        <div id="detalle-pedido">
+            <span>Productos</span>
+            <span id="cant-products"></span>
+        </div>
+        <div id="total-pedido">
+            <span>Total</span>
+            <span id="total-confirm"></span>
+        </div>
+        <div>
+            <button id="comprar-final">Comprar</button>
+        </div>
+    </div>
+  </div> 
+  </div>
+</div> 
+
 </main>
 
 
