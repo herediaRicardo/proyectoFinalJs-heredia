@@ -3,8 +3,7 @@
        "id": 1,
        "item": "Gorras",
        "price": 4350,
-       "img": "./assets/img/portfolio/unoi.jpg",
-       "variant": ["negro", "blanco"]
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
        "id": 2,
@@ -14,7 +13,7 @@
    },
    {
        "id": 3,
-       "item": "Libreta con lapicera",
+       "item": "Libreta con bolígrafo",
        "price": 2000,
        "img": "./assets/img/portfolio/unoi.jpg"
    },
@@ -28,15 +27,13 @@
        "id": 5,
        "item": "Bolsa de madera",
        "price": 500,
-       "img": "./assets/img/portfolio/unoi.jpg",
-       "variant": ["negro", "blanco", "marron"]
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
        "id": 6,
        "item": "Vaso termico",
        "price": 12000,
-       "img": "./assets/img/portfolio/unoi.jpg",
-       "variant": ["negro", "blanco"]
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
        "id": 7,
@@ -48,8 +45,7 @@
        "id": 8,
        "item": "Bolígrafos",
        "price": 900,
-       "img": "./assets/img/portfolio/unoi.jpg",
-       "variant": ["negro", "azul"]
+       "img": "./assets/img/portfolio/unoi.jpg"
    },
    {
        "id": 9,
