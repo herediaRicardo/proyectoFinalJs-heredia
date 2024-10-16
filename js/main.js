@@ -24,7 +24,6 @@ function removeWarning(container, warningId) {
 function configureRegister() {
     document.getElementById('crearCuenta').addEventListener('click', (event) => {
         event.preventDefault();
-     //   let savedUsers;
         try {
             savedUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
         } catch (error) {
@@ -86,7 +85,7 @@ function configureRegister() {
         if (formIsValid) {
             const hashedPassword = CryptoJS.SHA256(userPassword).toString();
 
-            // Crear el nuevo usuario
+            // Creo el nuevo usuario
             const newUser = {
                 nombre: userName,
                 lastName: userLastname,
@@ -124,17 +123,15 @@ function configureLogin() {
         const usuarioEncontrado = savedUsers.find(usuario => usuario.email === emailLogin);
         const hashedPasswordLogin = CryptoJS.SHA256(passwordLogin).toString();
 
-        // Verificar si las credenciales coinciden
+        // Verifico si las credenciales coinciden
         if (!usuarioEncontrado || usuarioEncontrado.password !== hashedPasswordLogin) {
             showWarning(loginContainer, 'loginWarning', 'Correo electrónico o contraseña incorrectos');
         } else {
 
-         //   alert(`Bienvenido ${usuarioEncontrado.nombre}`);
          Swal.fire({
             title: `"Bienvenido ${usuarioEncontrado.nombre}"`,
             showDenyButton: true,
           }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 goToIndex();    
             }
@@ -145,9 +142,7 @@ function configureLogin() {
 }
 
 function goToIndex() { 
-//Acá tengo que conseguir la manera de tomar el nombre guardado en local storage.
     location.href = "../index.html";
-    // Crear lógica para popup de bienvenida
 }
 
 

@@ -1,5 +1,8 @@
 Programa realizado para El proyecto final:
 
+Pagina de Inicio
+-Muestro de manera al azar trabajos realizados por la agencia en una sección del index.
+
 Pagina Registro y Login:
 -Validaciones de Mails
 -Guardado en local storage mediante JSON
@@ -12,15 +15,16 @@ Pagina Portfolio y Nosotros
 -Los clasifico según tipo
 -Utilización de forEach
 
-Pagina de Inicio
--Muestro de manera al azar trabajos realizados por la agencia en una sección del index.
+Pagina de venta de Merchandising
+-Renderizo productos en la pagina
+-Modal creado para carrito de compras
+-Ventana modal extra para confirmar compra con datos
 
 Archivos json
--Al tener dos HTML en distintas carpetas, no pude acomodar la ruta relativa, quise poner el "porftolio.html" en la raíz pero se llenaba de errores. Por esto, aunque sea muy mala practica, duplique el archivo json para cada uno de ellos.
+-Trabajos de Portfolio
+-Productos para veder
+-Integrantes
 
 
-A realizar:
--Al iniciar sesión que se imprima un popup de bienvenida nombrando al usuario logueado
--Correción de barra de menú.
--Identificar si hay alguien con sesion iniciada.
+
 

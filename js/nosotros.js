@@ -1,7 +1,7 @@
 function renderUs() {
     fetch('../JSON/integrantes.json')
         .then(res => {
-            // Programación defensiva: verifica si la respuesta es exitosa
+            // Programación defensiva: verifico si la respuesta es exitosa
             if (!res.ok) {
                 throw new Error("Error al obtener los datos.");
             }
@@ -22,7 +22,7 @@ function renderUs() {
                     linkedin = '#' 
                 } = elemento;
 
-                // Construye el contenido asegurando que los valores estén definidos
+                // Construyo el contenido asegurando que los valores estén definidos
                 content += `
                     <div class="cajasIntegrantes">
                         <div class="integrantesFotos">
@@ -39,7 +39,7 @@ function renderUs() {
                 `;
             });
 
-            // Verifica si el contenedor existe (programación defensiva)
+            // Verifico si el contenedor existe (programación defensiva)
             if (container) {
                 container.innerHTML = content;
             } else {
@@ -47,7 +47,6 @@ function renderUs() {
             }
         })
         .catch(error => {
-            // Manejo de errores en caso de que la promesa falle
             console.error('Error al cargar los integrantes:', error);
         }); 
 }
